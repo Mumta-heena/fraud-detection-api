@@ -53,12 +53,12 @@ DEVICE = torch.device("cpu")
 
 transformer_ieee = FraudTransformer(input_dim=358)
 transformer_ieee.load_state_dict(
-    torch.load("models/transformer_ieee.pt", map_location=DEVICE)
+    torch.load("transformer_ieee.pt", map_location=DEVICE)
 )
 transformer_ieee.eval()
 
 xgb_ieee = xgb.XGBClassifier()
-xgb_ieee.load_model("models/xgb_ieee.json")
+xgb_ieee.load_model("xgb_ieee.json")
 
 print("Models loaded successfully")
 
